@@ -38,6 +38,7 @@ pipeline {
                     input message: 'Are you sure to deploy?', ok: 'Yes, deploy in STAGING'
                     sh 'terraform workspace new prod'
                     sh 'terraform plan -out=ftprod_plan -var=env=prod'
+                    sh 'terraform apply "ftprod_plan"'
                     }
                 }
             }
