@@ -26,7 +26,7 @@ pipeline {
             steps {
                 dir('infrastructure') {
                     sh 'terraform workspace new dev'
-                    sh 'terraform plan -out=ftdev_plan -var 'env=dev''
+                    sh 'terraform plan -out=ftdev_plan -var=env=dev'
                     sh 'terraform apply "ftdev_plan"'
                 }
             }
@@ -37,7 +37,7 @@ pipeline {
                     timeout(time: 10, unit: 'MINUTES') {
                     input message: 'Are you sure to deploy?', ok: 'Yes, deploy in STAGING'
                     sh 'terraform workspace new prod'
-                    sh 'terraform plan -out=ftprod_plan -var 'env=prod''
+                    sh 'terraform plan -out=ftprod_plan -var=env=prod'
                     }
                 }
             }
