@@ -1,5 +1,11 @@
 # Declare the aws provider
-provider "aws" {
-   
-  region = var.aws_region
+terraform {
+  required_providers {
+    mycloud = {
+      source  = "hashicorp/aws"
+      version = ">= 1.0"
+      region = var.aws_region 
+    }
+  }
 }
+
