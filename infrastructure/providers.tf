@@ -1,4 +1,4 @@
-# Declare the aws provider
+# Declare the aws providers
 terraform {
   required_providers {
     aws = {
