@@ -60,6 +60,11 @@ jobs:
     defaults:
       run:
         shell: bash
+    
+    env: 
+     AWS_ACCES_KEY_ID: ${{ seecret.AWS_ACCESS_KEY_ID}}
+     AWS_SECRET_ACCESS_KEY: ${{secret.AWS_SECRET_ACCESS_KEY}}
+     AWS_REGION: "eu-west-1"
 
     steps:
     # Checkout the repository to the GitHub Actions runner
