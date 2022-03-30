@@ -83,10 +83,14 @@ jobs:
       working-directory: infrastructure
 
     # Checks that all Terraform configuration files adhere to a canonical format
-    - name: Terraform Format
-      run: terraform fmt -check
-      working-directory: infrastructure
+   # - name: Terraform Format
+   #   run: terraform fmt -check
+   #   working-directory: infrastructure
 
+    - name : Terraform Validate
+      run: terraform validate
+      working-directory: infrastructure
+      
     # Generates an execution plan for Terraform
     - name: Terraform build-dev
       run: |
