@@ -1,8 +1,16 @@
-# Declare the aws providers
+# Declare the aws provider
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.0"
+    }
+  }
+}
+
 provider "aws" {
-  region =var.aws_region
-  
-}  
+  region =var.aws_regio
+}
 
 # Create a random id
 resource "random_id" "tf_bucket_id" {
