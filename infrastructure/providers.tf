@@ -1,7 +1,7 @@
 # Declare the aws provider
 terraform {
   required_providers {
-    mycloud = {
+    aws = {
       source  = "hashicorp/aws"
       version = ">= 1.0"
       
