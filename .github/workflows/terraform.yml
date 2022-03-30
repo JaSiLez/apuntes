@@ -87,17 +87,18 @@ jobs:
    #   run: terraform fmt -check
    #   working-directory: infrastructure
 
-    - name : Terraform Validate
-      run: terraform validate
-      working-directory: infrastructure
+    
       
     # Generates an execution plan for Terraform
-    - name: Terraform build-dev
+    - name: Terraform Plan
       run: |
        terraform workspace new dev
        terraform plan -out=ftdev_plan -var=env=dev
-       terraform apply "ftdev_plan"
       working-directory: infrastructure 
+      
+    - name : Terraform Aplly
+      run:  terraform apply "ftdev_plan"
+      working-directory: infrastructure  
       
 
       # On push to main, build or change infrastructure according to Terraform configuration files
