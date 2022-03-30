@@ -1,11 +1,7 @@
 # Declare the aws providers
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = ">= 1.0"
-      
-    }
-  }
-}
+provider "aws" {
+  
+  access_key = "${AWS_ACCES_KEY_ID}"
+  secret_key = "${AWS_SECRET_ACCESS_KEY}" 
 
+}
