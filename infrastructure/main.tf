@@ -1,3 +1,9 @@
+# Declare the aws providers
+provider "aws" {
+  region =var.aws_region
+  
+}  
+
 # Create a random id
 resource "random_id" "tf_bucket_id" {
   byte_length = 2
